@@ -20,6 +20,7 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/ChatArch/ChatJiXia"
 Repository = "https://github.com/ChatArch/ChatJiXia"
+Documentation = "https://arch.gh.wzhecnu.cn/ChatJiXia/"
 
 [project.scripts]
 chatjixia = "chatjixia.cli:main"
@@ -29,6 +30,7 @@ chatjixia = "chatjixia.config"
 
 [project.optional-dependencies]
 dev = ["build", "pytest", "twine"]
+docs = ["mkdocs>=1.6,<2.0", "mkdocs-material>=9.5,<10.0", "mkdocs-static-i18n>=1.2,<2.0", "mike>=2.0,<3.0"]
 
 [tool.setuptools.dynamic]
 version = {attr = "chatjixia.__version__"}

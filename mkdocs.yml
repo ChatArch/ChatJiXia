@@ -1,0 +1,43 @@
+site_name: ChatJiXia 文档
+site_url: https://arch.gh.wzhecnu.cn/ChatJiXia/
+repo_url: https://github.com/ChatArch/ChatJiXia
+theme:
+  name: material
+  language: zh
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: zh
+          default: true
+          name: 中文
+          build: true
+          site_name: ChatJiXia 文档
+        - locale: en
+          name: English
+          build: true
+          site_name: ChatJiXia Documentation
+          nav_translations:
+            首页: Home
+            CLI 树: CLI Tree
+extra:
+  alternate:
+    - name: 中文
+      link: /ChatJiXia/
+      lang: zh
+    - name: English
+      link: /ChatJiXia/en/
+      lang: en
+nav:
+  - 首页: index.md
+  - CLI 树: cli-tree.md
