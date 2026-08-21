@@ -27,6 +27,16 @@ def test_docs_workflows_use_chatarch_site_url():
     assert 'github.io' not in preview
     assert 'mkdocs gh-deploy --force' in deploy
     assert 'mkdocs build --strict' in ci
+    assert 'chatjixia --version' in ci
+    assert 'chatjixia --tree' in ci
+    assert 'chatjixia --tree-brief' in ci
+
+
+def test_project_uses_shared_cli_runtime_bounds():
+    project = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
+
+    assert '"chatstyle>=0.2.0,<0.3.0"' in project
+    assert '"chatenv>=0.2.10,<0.3.0"' in project
 
 
 def test_mkdocs_material_renderer_and_public_domain():

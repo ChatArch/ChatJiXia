@@ -26,22 +26,25 @@ pip install ChatJiXia
 chatjixia --help
 chatjixia --version
 chatjixia --tree
+chatjixia --tree-brief
 ```
 
 ## Current CLI Tree
 
 ```text
-chatjixia  # ChatArch JiXia Lean analysis integration entrypoint
-├── --help  # show command help
-├── --version  # show the installed package version
-└── --tree  # show this CLI tree
+chatjixia
+├── --help  # Show this message and exit.
+├── --version  # Show the version and exit.
+├── --tree  # Print the registered CLI tree and exit.
+└── --tree-brief  # Print the registered CLI tree without parameter signatures and exit.
 ```
 
 ## CLI Boundary
 
 - The current CLI only exposes root options and has no business subcommands.
-- `--tree` is generated from the real Click command registration and is used to align README, docs, and tests.
-- When real JiXia/Lean analysis commands are added later, update the Click registration first and then sync docs from the real `chatjixia --tree` output.
+- `--tree` and `--tree-brief` are generated from the real command registration by ChatStyle's shared Click tree runtime, with the public root fixed to the canonical `chatjixia` entrypoint.
+- `--tree` retains command parameter signatures by default; `--tree-brief` omits signatures while preserving command nodes and descriptions. Because the current root-only CLI has no parameterized command nodes, both modes currently render the same tree content.
+- When real JiXia/Lean analysis commands are added later, update the Click registration first and then sync docs from the real `chatjixia --tree` and `chatjixia --tree-brief` outputs.
 
 ## Layout
 

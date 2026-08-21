@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.2 - 2026-08-21
+
+### Changed
+
+- Migrated the top-level CLI tree to ChatStyle's shared `add_tree_option` runtime with the canonical `chatjixia` root.
+- Added `--tree-brief`; the default tree keeps command parameter signatures while brief output omits them and preserves command descriptions.
+- Raised the runtime bounds to `chatstyle>=0.2.0,<0.3.0` and `chatenv>=0.2.10,<0.3.0`.
+
 ## 0.1.1 - 2026-08-12
 
 ### Added
